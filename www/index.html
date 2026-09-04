@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Simple To Do</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-info">
+          <h1>To Do</h1>
+          <p id="task-summary">Today · 0 tasks</p>
+        </div>
+        <button
+          id="btn-request-perm"
+          class="btn-icon-perm"
+          title="Enable Notifications"
+        >
+          🔔
+        </button>
+      </header>
+
+      <!-- Filter Buttons -->
+      <nav class="filters-nav">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="pending">Pending</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+      </nav>
+
+      <!-- Tasks List Area -->
+      <main class="tasks-container">
+        <div id="tasks-list" class="tasks-list"></div>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="empty-state hidden">
+          <div class="empty-icon">📝</div>
+          <h3>No tasks yet</h3>
+          <p>Create your first task to stay organized!</p>
+          <button id="btn-empty-add" class="btn-primary">+ Add Task</button>
+        </div>
+      </main>
+
+      <!-- Floating Action Button (FAB) -->
+      <button id="btn-fab" class="fab">+</button>
+    </div>
+
+    <!-- Modal Task Form -->
+    <div id="task-modal" class="modal-overlay hidden">
+      <div class="modal-content">
+        <h2 id="modal-title">New Task</h2>
+        <form id="task-form">
+          <input type="hidden" id="task-id" />
+
+          <div class="form-group">
+            <label for="task-title">Task Name *</label>
+            <input
+              type="text"
+              id="task-title"
+              placeholder="e.g., Study English"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="task-desc">Description</label>
+            <textarea
+              id="task-desc"
+              rows="3"
+              placeholder="Additional details..."
+            ></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="task-date">Date *</label>
+              <input type="date" id="task-date" required />
+            </div>
+            <div class="form-group">
+              <label for="task-time">Time *</label>
+              <input type="time" id="task-time" required />
+            </div>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" id="btn-cancel" class="btn-secondary">
+              Cancel
+            </button>
+            <button type="submit" class="btn-primary">Save Task</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirm-modal" class="modal-overlay hidden">
+      <div class="modal-content modal-confirm">
+        <h3>Delete Task</h3>
+        <p>Are you sure you want to delete this task?</p>
+        <div class="modal-actions">
+          <button id="btn-confirm-cancel" class="btn-secondary">Cancel</button>
+          <button id="btn-confirm-delete" class="btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Message -->
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

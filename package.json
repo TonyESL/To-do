@@ -1,0 +1,20 @@
+{
+    "name": "simple-todo",
+    "version": "1.0.0",
+    "description": "Simple To Do list app built with HTML, CSS, JS and Capacitor",
+    "main": "index.html",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": ["todo", "capacitor", "android"],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "@capacitor/android": "^6.0.0",
+      "@capacitor/core": "^6.0.0",
+      "@capacitor/local-notifications": "^6.0.0"
+    },
+    "devDependencies": {
+      "@capacitor/cli": "^6.0.0"
+    }
+  }
